@@ -34,8 +34,6 @@ services:
       - DB_PASSWORD=g1l@DBAdm1n
     depends_on:
       - db
-    volumes:
-      - ./gilastore-api:/var/www/html
 
   # 3. Frontend Container (ClojureScript)
   ui:
