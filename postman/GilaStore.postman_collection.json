@@ -1,0 +1,1094 @@
+{
+  "info": {
+    "_postman_id": "fc1554d2-3020-4ebe-b4a5-08a39730b1c6",
+    "name": "GilaStore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43139473"
+  },
+  "item": [
+    {
+      "name": "SalesCart",
+      "item": [
+        {
+          "name": "SalesCartView",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/{{salesCartPath}}/{{cartView}}/4",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesCartPath}}",
+                "{{cartView}}",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesAddItem",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"UserId\": \"2\",\r\n    \"ProductId\": \"39\",\r\n    \"Quantity\" : \"22\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/{{salesCartPath}}/{{cartAddItem}}",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesCartPath}}",
+                "{{cartAddItem}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesRemoveItem",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"UserId\": \"4\",\r\n    \"ProductId\": \"3\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/{{salesCartPath}}/{{cartRemoveItem}}",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesCartPath}}",
+                "{{cartRemoveItem}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesCartIncreaseQty",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"UserId\": \"1\",\r\n    \"ProductId\": \"422\",\r\n    \"IncrementQty\": \"6\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}sales/cart/cartItemIncrementQuantity",
+              "host": [
+                "{{apiURL}}sales"
+              ],
+              "path": [
+                "cart",
+                "cartItemIncrementQuantity"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesCartDecrementQty",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"UserId\": \"1\",\r\n    \"ProductId\": \"420\",\r\n    \"DecrementQty\": \"3\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}sales/cart/decrement",
+              "host": [
+                "{{apiURL}}sales"
+              ],
+              "path": [
+                "cart",
+                "decrement"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesCartClear",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"UserId\" : \"2\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/{{salesCartPath}}/clear",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesCartPath}}",
+                "clear"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "ProductsGet",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/products",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProductsStore",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Cafetera Express Pro2\",\r\n  \"sku\": \"CAF-EXP-002\",\r\n  \"description\": \"Cafetera semiautomática para espresso y capuchino\",\r\n  \"weight_kg\": 4.500,\r\n  \"price\": 2499.99,\r\n  \"CategoryId\": 1,\r\n  \"Created_by\": 1,\r\n  \"initial_stock\": 25\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/products",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProductsImportsFileList",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}products/importedFileList",
+              "host": [
+                "{{apiURL}}products"
+              ],
+              "path": [
+                "importedFileList"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProductsImport",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/C:/Projects/GilaStore/LoanProClean.csv"
+                  ]
+                },
+                {
+                  "key": "user_id",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{apiURL}}/products/import",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "products",
+                "import"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProductsUpdate",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"Description\":\"Fuente de Poder 650W 83+\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}products/408",
+              "host": [
+                "{{apiURL}}products"
+              ],
+              "path": [
+                "408"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProductsDelete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/products/16",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "products",
+                "16"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteBatch",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ids\": [408,409,410]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}products/deleteBatch",
+              "host": [
+                "{{apiURL}}products"
+              ],
+              "path": [
+                "deleteBatch"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProductsPost",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Name\": \"Cafetera Express Pro\",\r\n  \"SKU\": \"CAF-EXP-001\",\r\n  \"Description\": \"Cafetera semiautomática para espresso y capuchino\",\r\n  \"Weight_KG\": 4.500,\r\n  \"Price\": 2499.99,\r\n  \"CategoryId\": 1,\r\n  \"Created_by\": 1,\r\n  \"initial_stock\": 25,\r\n  \"cost_price\": 1500.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/products",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProductsCategories",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/products/categories",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "products",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ProductsSearch",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/products/search/SKU-ACC",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "products",
+                "search",
+                "SKU-ACC"
+              ],
+              "query": [
+                {
+                  "key": "a",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sales",
+      "item": [
+        {
+          "name": "SalesCheckOut",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"UserId\": 2,\r\n  \"IdempotencyKey\": \"a3c4529ef6b94d9492260ac4b0441502\",\r\n  \"ShippingAddress\": \"Av. Tecnologico #123, Col. Centro, Ciudad Juarez, Chih.\",\r\n  \"PaymentMethod\": \"CREDIT_CARD\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/{{salesPath}}/{{salesCheckOut}}",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesPath}}",
+                "{{salesCheckOut}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesViewMyOrder",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "X-API-KEY",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/{{salesPath}}/{{OrderNum}}",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesPath}}",
+                "{{OrderNum}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesCancelOrder",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/{{salesPath}}/{{OrderNum}}",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesPath}}",
+                "{{OrderNum}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesMyOrdersByUser",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/{{salesPath}}/byuser/4",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesPath}}",
+                "byuser",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SalesAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/{{salesPath}}/all",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "{{salesPath}}",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "AuthRegister",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Name\": \"Santiago Elenes Quintana\",\r\n  \"username\": \"santiagoeq\",\r\n  \"Email\": \"santiago.elenes.quintana@example.com\",\r\n  \"password\": \"password123\",\r\n  \"Role\": \"User\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/auth/register",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "auth/login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();\r\n\r\n// Verificar si la respuesta trae el token y guardarlo en la variable de entorno\r\nif (jsonData.authorization && jsonData.authorization.token) {\r\n    pm.collectionVariables.set('JWToken', jsonData.authorization.token);\r\n    console.log(\"Token JWT guardado exitosamente en la variable: jwt_token\");\r\n}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Email\": \"admin@gilastore.com\",\r\n  \"password\": \"admin159\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/auth/login",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Auth/logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/auth/logout",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AuthMyProfile",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"Email\": \"admin@gilastore.com\",\r\n  \"password\": \"admin159\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{apiURL}}/auth/myprofile",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "auth",
+                "myprofile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AuthUsersIndex",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{JWToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "{{acceptValue}}"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{X-API-KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{apiURL}}/auth/",
+              "host": [
+                "{{apiURL}}"
+              ],
+              "path": [
+                "auth",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "apiURL",
+      "value": ""
+    },
+    {
+      "key": "salesPath",
+      "value": ""
+    },
+    {
+      "key": "salesCartPath",
+      "value": ""
+    },
+    {
+      "key": "salesCheckOut",
+      "value": ""
+    },
+    {
+      "key": "salesOrderByUser",
+      "value": ""
+    },
+    {
+      "key": "cartView",
+      "value": ""
+    },
+    {
+      "key": "cartAddItem",
+      "value": ""
+    },
+    {
+      "key": "cartRemoveItem",
+      "value": ""
+    },
+    {
+      "key": "acceptValue",
+      "value": ""
+    },
+    {
+      "key": "OrderNum",
+      "value": ""
+    },
+    {
+      "key": "X-API-KEY",
+      "value": ""
+    },
+    {
+      "key": "JWToken",
+      "value": ""
+    }
+  ]
+}
