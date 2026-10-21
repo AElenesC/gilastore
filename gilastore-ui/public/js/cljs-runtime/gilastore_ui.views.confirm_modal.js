@@ -1,0 +1,10 @@
+goog.provide('gilastore_ui.views.confirm_modal');
+gilastore_ui.views.confirm_modal.confirm_modal = (function gilastore_ui$views$confirm_modal$confirm_modal(open_QMARK_,title,message,on_confirm,on_close){
+if(cljs.core.not(open_QMARK_)){
+return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632)], null);
+} else {
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.confirm-modal-overlay","div.confirm-modal-overlay",115041877),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.confirm-modal-card","div.confirm-modal-card",869817712),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h3.confirm-modal-title","h3.confirm-modal-title",2123949849),title], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"p.confirm-modal-message","p.confirm-modal-message",728903136),message], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.confirm-modal-actions","div.confirm-modal-actions",-1485895280),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"button.confirm-btn-cancel","button.confirm-btn-cancel",1434798638),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-click","on-click",1632826543),on_close], null),"Cancel"], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"button.confirm-btn-delete","button.confirm-btn-delete",-1742347584),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"on-click","on-click",1632826543),on_confirm], null),"Delete"], null)], null)], null)], null);
+}
+});
+
+//# sourceMappingURL=gilastore_ui.views.confirm_modal.js.map

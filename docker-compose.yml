@@ -1,0 +1,54 @@
+services:
+  # 1. MySQL DB Container
+  db:
+    image: mysql:8.0
+    container_name: gilastore-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: GilaStoreDB
+      MYSQL_ROOT_PASSWORD: r00tp@ssw0rdS3cur3
+      MYSQL_USER: gilaDBAdmin
+      MYSQL_PASSWORD: g1l@DBAdm1n
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # 2. Backend (API) Container(Laravel)
+  api:
+    build:
+      context: ./gilastore-api
+      dockerfile: Dockerfile
+    container_name: gilastore-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=GilaStoreDB
+      - DB_USERNAME=gilaDBAdmin
+      - DB_PASSWORD=g1l@DBAdm1n
+    depends_on:
+      - db
+    volumes:
+      - ./gilastore-api:/var/www/html
+
+  # 3. Frontend Container (ClojureScript)
+  ui:
+    build:
+      context: ./gilastore-ui
+      dockerfile: Dockerfile
+    container_name: gilastore-ui
+    restart: unless-stopped
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+
+volumes:
+  mysql_data:
+    driver: local

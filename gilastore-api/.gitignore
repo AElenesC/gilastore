@@ -1,0 +1,33 @@
+#PHP Dependencies
+/vendor/
+
+# Environment and secretss files
+#/.env
+#/.env.backup
+#/.env.production
+
+# Laravel directories (Cache, logs, and sessions)
+/storage/*.key
+/storage/app/public/*
+!/storage/app/public/.gitignore
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+
+# Node / Frontend environment (if applicable)
+/node_modules
+/public/hot
+/public/storage
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+/.phpunit.cache
+/phpunit.xml

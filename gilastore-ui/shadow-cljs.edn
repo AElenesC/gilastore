@@ -1,0 +1,18 @@
+{:version "3.5.7"
+ :source-paths ["src"]
+ :dependencies [[reagent "1.2.0"]]
+
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "public/js"
+   :asset-path "/js"
+
+   :modules
+   {:main
+    {:entries [gilastore-ui.core]
+     :init-fn gilastore-ui.core/init}}
+
+   :devtools
+   {:http-root "public"
+    :http-port 8700}}}}

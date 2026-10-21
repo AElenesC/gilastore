@@ -1,0 +1,53 @@
+[{
+	"resource": "/c:/Projects/GilaStore/gilastore-ui/src/gilastore_ui/views/product_modal.cljs",
+	"owner": "_generated_diagnostic_collection_name_#2",
+	"code": "syntax",
+	"severity": 8,
+	"message": "Found an opening ( with no matching )",
+	"source": "clj-kondo",
+	"startLineNumber": 20,
+	"startColumn": 1,
+	"endLineNumber": 20,
+	"endColumn": 1,
+	"modelVersionId": 20,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Projects/GilaStore/gilastore-ui/src/gilastore_ui/views/product_modal.cljs",
+	"owner": "_generated_diagnostic_collection_name_#2",
+	"code": "syntax",
+	"severity": 8,
+	"message": "Mismatched bracket: found an opening [ and a closing ) on line 151",
+	"source": "clj-kondo",
+	"startLineNumber": 23,
+	"startColumn": 5,
+	"endLineNumber": 23,
+	"endColumn": 5,
+	"modelVersionId": 20,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Projects/GilaStore/gilastore-ui/src/gilastore_ui/views/product_modal.cljs",
+	"owner": "_generated_diagnostic_collection_name_#2",
+	"code": "syntax",
+	"severity": 8,
+	"message": "Mismatched bracket: found an opening [ on line 23 and a closing )",
+	"source": "clj-kondo",
+	"startLineNumber": 151,
+	"startColumn": 54,
+	"endLineNumber": 151,
+	"endColumn": 54,
+	"modelVersionId": 20,
+	"origin": "extHost1"
+},{
+	"resource": "/c:/Projects/GilaStore/gilastore-ui/src/gilastore_ui/views/product_modal.cljs",
+	"owner": "_generated_diagnostic_collection_name_#2",
+	"code": "syntax",
+	"severity": 8,
+	"message": "Expected a ) to match ( from line 20",
+	"source": "clj-kondo",
+	"startLineNumber": 151,
+	"startColumn": 56,
+	"endLineNumber": 151,
+	"endColumn": 56,
+	"modelVersionId": 20,
+	"origin": "extHost1"
+}]
