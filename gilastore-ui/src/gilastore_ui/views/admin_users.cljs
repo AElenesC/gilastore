@@ -8,11 +8,11 @@
                                     :error nil}))
 
 (defonce show-modal? (r/atom false))
-(defonce new-user-form (r/atom {:name ""
+(defonce new-user-form (r/atom {:Name ""
                                 :username ""
-                                :email ""
+                                :Email ""
                                 :password ""
-                                :role "User"}))
+                                :Role "User"}))
 
 (defn fetch-all-users []
   (swap! admin-users-state assoc :loading? true :error nil)
