@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\CategorySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,7 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Aquí puedes agregar tus seeders cuando los necesites, por ejemplo:
-        // $this->call(UserSeeder::class);
+        $this->call([
+            UserSeeder::class,
+            CategorySeeder::class, // O el seeder que corresponda
+        ]);
     }
 }

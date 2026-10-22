@@ -10,19 +10,17 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        // 1. Usuario Administrador
-        User::create([
+         User::create([
             'Name'       => 'System Administrator',
             'username'   => 'admin',
             'Email'      => 'admin@gilastore.com',
             'password'   => Hash::make('pass123'),
             'Role'       => 'admin',
             'Avatar_Url' => null,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'CreatedAt' => now(),
+            'CreatedBy' => '1',
         ]);
 
-        // 2. Usuario Comprador (Shopper)
         User::create([
             'Name'       => 'Store Shopper',
             'username'   => 'shopper',
@@ -30,8 +28,8 @@ class UserSeeder extends Seeder
             'password'   => Hash::make('pass123'),
             'Role'       => 'User',
             'Avatar_Url' => null,
-            'created_at' => now(),
-            'updated_at' => now(),
+            'CreatedAt' => now(),
+            'CreatedBy' => "1",
         ]);
     }
 }

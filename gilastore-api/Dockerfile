@@ -20,7 +20,7 @@ WORKDIR /var/www/html
 
 COPY composer.json composer.lock ./
 
-RUN composer install --optimize-autoloader --no-interaction --no-dev
+RUN composer install --optimize-autoloader --no-interaction --no-dev --no-scripts
 
 COPY . .
 
